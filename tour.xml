@@ -81,21 +81,41 @@
 
 <action name="init_flags">
     set(music_is_playing, false);
+    set(is_animating, false);
 </action>
 
-
-
 <action name="toggle_sidebar">
-    if(layer[sidebar].visible,
-        tween(layer[sidebar].x, -250, 0.5);                  <!-- Hide sidebar off-screen to the left -->
-        tween(layer[menu_button].x, 10, 0.5);                <!-- Return menu button to original position -->
-        delayedcall(0.5, set(layer[sidebar].visible, false));<!-- Hide after animation completes -->
+    if(is_animating, null,
+        set(is_animating, true);
+        if(layer[sidebar].visible,
+            tween(layer[sidebar].x, -250, 0.5);
+            tween(layer[menu_button].x, 10, 0.5);
+            delayedcall(0.5, 
+                set(layer[sidebar].visible, false);
+                set(is_animating, false);
+            );
         ,
-        set(layer[sidebar].visible, true);                   <!-- First make sidebar visible -->
-        tween(layer[sidebar].x, 0, 0.5);                     <!-- Slide it in from left -->
-        tween(layer[menu_button].x, 250, 0.5);               <!-- Move menu button to align with sidebar -->
+            set(layer[sidebar].visible, true);
+            tween(layer[sidebar].x, 0, 0.5);
+            tween(layer[menu_button].x, 250, 0.5);
+            delayedcall(0.5,
+                set(is_animating, false);
+            );
         );
-    </action>
+    );
+</action>
+
+<!-- <action name="toggle_sidebar">
+    if(layer[sidebar].visible,
+        tween(layer[sidebar].x, -250, 0.5);
+        tween(layer[menu_button].x, 10, 0.5);                
+        delayedcall(0.5, set(layer[sidebar].visible, false));
+        ,
+        set(layer[sidebar].visible, true);
+        tween(layer[sidebar].x, 0, 0.5);                     
+        tween(layer[menu_button].x, 250, 0.5);               
+        );
+    </action> -->
 
 
     <action name="toggle_music">
