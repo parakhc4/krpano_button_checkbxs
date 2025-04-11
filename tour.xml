@@ -289,16 +289,16 @@
                html="Enter"
                align="center"
                x="0"
-               y="150"
+               y="100"
                width="200"
                height="50"
-               bgcolor="0x478D8D"
+               bgcolor="0xFAF9F6"
                bgalpha="1"
                roundedge="15"
                bgshadow="2"
                shadowcolor="0x000000"
                shadowalpha="0.4"
-               css="font-family:'Montserrat', sans-serif; font-size:18px; font-weight:bold; color:#FFFFFF; text-align:center; line-height:50px;text-transform: uppercase;"
+               css="font-family:'Montserrat', sans-serif; font-size:13px; font-weight:bold; color:#478D8D; text-align:center; line-height:50px;text-transform: uppercase;"
                onover="tween(scale, 1.1);"
                onout="tween(scale, 1.0);"
                onclick="hide_welcome_layer_natural();init_flags();toggle_music();"
@@ -837,7 +837,7 @@
 
 	</scene>
 
-	<scene name="scene_1_ROOMS" title="1 ROOMS" onstart="set(layer[daynight_button].visible, false);set(layer[scene_title_display].html, 'Rooms'); set(layer[scene_title_display].visible, true)" thumburl="panos/1_ROOMS.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+	<scene name="scene_1_ROOMS" title="1 ROOMS" onstart="set(layer[daynight_button].visible, false);set(layer[scene_title_display].html, 'Corridor'); set(layer[scene_title_display].visible, true)" thumburl="panos/1_ROOMS.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -890,7 +890,7 @@
 		<hotspot name="spot4" style="hs_circle" ath="-83.221" atv="28.546" linkedscene="scene_1_Reception_2" linkedscene_lookat="94.42,11.15,116.12" linkedscene_hoffset="442.61" use3dtransition="true" tag="Reception"/>
 		<hotspot name="spot1" style="hs_circle" ath="4.082" atv="5.635" linkedscene="scene_banquet_1" linkedscene_lookat="94.0,20.14,105.24" linkedscene_hoffset="85.18" use3dtransition="true" tag="Banquet"/>
 		<hotspot name="spot2" style="hs_circle" ath="-155.433" atv="1.284" linkedscene="scene_Breakfast_Buffet" linkedscene_lookat="33.31,11.43,116.12" linkedscene_hoffset="498.64" use3dtransition="true" tag="Breakfast Buffet"/>
-		<hotspot name="spot3" style="hs_circle" ath="114.055" atv="-7.959" linkedscene="scene_1_ROOMS" linkedscene_lookat="3.53,20.15,120.0" linkedscene_hoffset="-92.53" use3dtransition="true" tag="Rooms"/>
+		<hotspot name="spot3" style="hs_circle" ath="114.055" atv="-7.959" linkedscene="scene_1_ROOMS" linkedscene_lookat="3.53,20.15,120.0" linkedscene_hoffset="-92.53" use3dtransition="true" tag="Corridor"/>
 
 	</scene>
 
@@ -976,7 +976,7 @@
 
 		<hotspot name="spot3" style="hs_circle" ath="6.507" atv="1.821" linkedscene="scene_1_day" linkedscene_lookat="-132.0,24.92,114.69" linkedscene_hoffset="200.36" use3dtransition="true" tag="Overview"/>
 		<hotspot name="spot1" style="hs_circle" ath="-110.588" atv="-4.924" linkedscene="scene_Deluxe_Room" linkedscene_lookat="-161.68,13.17,116.72" linkedscene_hoffset="288.52" use3dtransition="true" tag="Deluxe Room"/>
-		<hotspot name="spot5" style="hs_circle" ath="-149.047" atv="-0.677" linkedscene="scene_1_ROOMS" linkedscene_lookat="-16.93,24.39,110.14" linkedscene_hoffset="386.81" tag="Rooms"/>
+		<hotspot name="spot5" style="hs_circle" ath="-149.047" atv="-0.677" linkedscene="scene_1_ROOMS" linkedscene_lookat="-16.93,24.39,110.14" linkedscene_hoffset="386.81" tag="Corridor"/>
 		
 
 	</scene>
@@ -993,8 +993,8 @@
 			<cube url="panos/Deluxe_Room.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
 		</image>
 
-		<hotspot name="spot2" style="hs_circle" ath="-2.071" atv="1.212" linkedscene="scene_Deluxe_Room_1" linkedscene_lookat="-161.68,13.17,116.72" linkedscene_hoffset="71.48" use3dtransition="true" tag=""/>
-		<hotspot name="spot1" style="hs_circle" ath="114.542" atv="8.974" linkedscene="scene_Deluxe_Room_1" linkedscene_lookat="-64.93,18.67,120.0" tag=""/>
+		<hotspot name="spot2" style="hs_circle" ath="-2.071" atv="1.212" linkedscene="scene_Deluxe_Room_1" linkedscene_lookat="-161.68,13.17,116.72" linkedscene_hoffset="71.48" use3dtransition="true" tag="Deluxe Room"/>
+		<hotspot name="spot1" style="hs_circle" ath="114.542" atv="8.974" linkedscene="scene_Deluxe_Room_1" linkedscene_lookat="-64.93,18.67,120.0" tag="Deluxe Room"/>
 
 	</scene>
 
@@ -1010,9 +1010,9 @@
 			<cube url="panos/executive_room_2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
 		</image>
 
-		<hotspot name="spot2" style="hs_circle" ath="-169.171" atv="2.949" linkedscene="scene_1_ROOMS" linkedscene_lookat="6.49,3.64,114.93" linkedscene_hoffset="251.06" use3dtransition="true" tag="Rooms"/>
+		<hotspot name="spot2" style="hs_circle" ath="-169.171" atv="2.949" linkedscene="scene_1_ROOMS" linkedscene_lookat="6.49,3.64,114.93" linkedscene_hoffset="251.06" use3dtransition="true" tag="Corridor"/>
 		<hotspot name="spot1" style="hs_circle" ath="7.211" atv="23.801" linkedscene="scene_Executive_room" linkedscene_lookat="117.19,25.53,114.75" linkedscene_hoffset="121.08" use3dtransition="true" tag="Executive Room"/>
-		<hotspot name="spot3" style="hs_circle" ath="-94.815" atv="3.611" linkedscene="scene_Executive_room_wc" linkedscene_lookat="-18.35,6.2,120.0" linkedscene_hoffset="408.79" use3dtransition="true" tag="Executive Room WC"/>
+		<hotspot name="spot3" style="hs_circle" ath="-94.815" atv="3.611" linkedscene="scene_Executive_room_wc" linkedscene_lookat="-18.35,6.2,120.0" linkedscene_hoffset="408.79" use3dtransition="true" tag="Executive Room"/>
 
 	</scene>
 
@@ -1045,8 +1045,8 @@
 			<cube url="panos/Executive_room.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
 		</image>
 
-		<hotspot name="spot3" style="hs_circle" ath="-51.712" atv="22.690" linkedscene="scene_Executive_room_2" linkedscene_lookat="117.19,25.53,114.75" linkedscene_hoffset="238.92" use3dtransition="true" tag="Executive Room 2"/>
-		<hotspot name="spot1" style="hs_circle" ath="-13.177" atv="-3.129" linkedscene="scene_Executive_room_wc" linkedscene_lookat="-108.86,13.13,120.0" linkedscene_hoffset="227.56" use3dtransition="true" tag="Executive Room WC"/>
+		<hotspot name="spot3" style="hs_circle" ath="-51.712" atv="22.690" linkedscene="scene_Executive_room_2" linkedscene_lookat="117.19,25.53,114.75" linkedscene_hoffset="238.92" use3dtransition="true" tag="Executive Room"/>
+		<hotspot name="spot1" style="hs_circle" ath="-13.177" atv="-3.129" linkedscene="scene_Executive_room_wc" linkedscene_lookat="-108.86,13.13,120.0" linkedscene_hoffset="227.56" use3dtransition="true" tag="Executive Room"/>
 
 	</scene>
 
@@ -1062,8 +1062,8 @@
 			<cube url="panos/JUNIOR_SUITE.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
 		</image>
 
-		<hotspot name="spot5" style="hs_circle" ath="175.286" atv="1.829" linkedscene="scene_1_ROOMS" linkedscene_lookat="4.91,17.91,106.24" linkedscene_hoffset="32.68" use3dtransition="true" tag="Rooms"/>
-		<hotspot name="spot1" style="hs_circle" ath="-19.947" atv="8.440" linkedscene="scene_JUNIOR_SUITE1" linkedscene_lookat="207.8,19.68,120.0" linkedscene_hoffset="240.87" use3dtransition="true" tag="Junior Suite"/>
+		<hotspot name="spot5" style="hs_circle" ath="175.286" atv="1.829" linkedscene="scene_1_ROOMS" linkedscene_lookat="4.91,17.91,106.24" linkedscene_hoffset="32.68" use3dtransition="true" tag="Corridor"/>
+		<hotspot name="spot1" style="hs_circle" ath="-12.747" atv="-1.2" linkedscene="scene_JUNIOR_SUITE1" linkedscene_lookat="207.8,19.68,120.0" linkedscene_hoffset="240.87" use3dtransition="true" tag="Junior Suite"/>
 		<hotspot name="spot2" style="hs_circle" ath="-61.771" atv="5.721" linkedscene="scene_JUNIOR_SUITE1_1" linkedscene_lookat="169.17,8.28,120.0" linkedscene_hoffset="262.75" use3dtransition="true" tag="Junior Suite"/>
 
 	</scene>
@@ -1080,7 +1080,7 @@
 			<cube url="panos/JUNIOR_SUITE1_1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
 		</image>
 
-		<hotspot name="spot3" style="hs_circle" ath="20.981" atv="-0.113" linkedscene="scene_JUNIOR_SUITE" linkedscene_lookat="169.17,8.28,120.0" linkedscene_hoffset="97.25" use3dtransition="true" tag=""/>
+		<hotspot name="spot3" style="hs_circle" ath="20.981" atv="-0.113" linkedscene="scene_JUNIOR_SUITE" linkedscene_lookat="169.17,8.28,120.0" linkedscene_hoffset="97.25" use3dtransition="true" tag="Junior Suite"/>
 
 	</scene>
 
