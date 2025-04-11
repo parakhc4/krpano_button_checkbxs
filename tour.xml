@@ -303,7 +303,7 @@
                onout="tween(scale, 1.0);"
                onclick="hide_welcome_layer_natural();init_flags();toggle_music();"
                keep="true"
-               zorder="1000" />
+               zorder="99999" />
            
 
     </layer>
