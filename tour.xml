@@ -310,15 +310,18 @@
 
 	<layer name="daynight_button"
        url="%SWFPATH%/skin/dayandnight.png"
-       width="40"
-       height="40"
+       width="60"
+       height="60"
        align="bottomcenter"  
-       y="8%"             
+       y="4%"             
        onclick="switch_daynight();"
        visible="false"
        keep="true"
-       zorder="2000" />
-
+       zorder="2000"
+       onover="tween(scale, 1.1, 0.2, easeOutCubic);"
+       onout="tween(scale, 1.0, 0.2, easeOutCubic);" />
+       
+       
        <layer name="music_toggle_button"
        url="%SWFPATH%/skin/soundonoff.png"
        width="40"
@@ -327,7 +330,9 @@
        onclick="toggle_music();"
        visible="true"
        keep="true"
-       zorder="2000" />
+       zorder="2000"
+       onover="tween(scale, 1.1, 0.2, easeOutCubic);"
+       onout="tween(scale, 1.0, 0.2, easeOutCubic);"  />
 
 	<layer name="logo_layer"
        url="%SWFPATH%/skin/logo.png"
@@ -378,6 +383,8 @@
            handcursor="true"
            keep="true"
            zorder="1000" 
+           onover="tween(scale, 1.1, 0.2, easeOutCubic);"
+           onout="tween(scale, 1.0, 0.2, easeOutCubic);" 
            onclick="toggle_sidebar();" />
 
 	<layer name="sidebar"
