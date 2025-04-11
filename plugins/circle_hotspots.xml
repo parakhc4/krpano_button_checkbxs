@@ -100,7 +100,7 @@
 		<!-- Hide circle hotspot -->	
 			set(hotspot[%1].zorder, 999999);
             tween(hotspot[%1].scale,1,0.3,easeoutcubic);        
-            tween(hotspot[%1].alpha,0,0.3,easeoutcubic);
+            tween(hotspot[%1].alpha,1,0.3,easeoutcubic);
             delayedcall(0.2,set(hotspot[%1].zorder,0););
 		
 		<!-- Show circle thumbnail -->	        

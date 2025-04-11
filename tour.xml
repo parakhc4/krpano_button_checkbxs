@@ -10,35 +10,7 @@
 
 
 <style name="default_style"
-       css="font-family: 'Montserrat', sans-serif;"
-/>
-
-<action name="showpreview">
-    addlayer(previewspot);
-    if(linkedscene AND scene[get(linkedscene)].thumburl,
-        set(layer[previewspot].url, get(scene[get(linkedscene)].thumburl));
-        set(layer[previewspot].width, 40);
-        set(layer[previewspot].height, 40);
-        set(layer[previewspot].align, center);
-        set(layer[previewspot].edge, center);
-        set(layer[previewspot].alpha, 0);
-        set(layer[previewspot].x, 0);
-        set(layer[previewspot].y, 0);
-        set(layer[previewspot].parent, get(name));
-        set(layer[previewspot].enabled, false);
-        set(layer[previewspot].handcursor, false);
-        set(layer[previewspot].zorder, 2);
-        tween(layer[previewspot].alpha, 1.0, 0.3);
-    );
-</action>
-
-<action name="removepreview">
-    if(layer[previewspot].alpha GT 0,
-        tween(layer[previewspot].alpha, 0.0, 0.3, default,
-            removelayer(previewspot);
-        );
-    );
-</action>
+       css="font-family: 'Montserrat', sans-serif;"/>
 
 <action name="silence_errors">
     set(showerrors, false);
@@ -51,8 +23,9 @@
 </action>
 
 <events name="krpanoReady" onkrpanoready="silence_errors();" />
+
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
-	<skin_settings maps="false"
+<skin_settings maps="false"
 	               maps_type="google"
 	               maps_bing_api_key=""
 	               maps_google_api_key=""
@@ -106,52 +79,21 @@
 	               design_text_shadow="1"
 	               />
 
-	<!--
-	    For an alternative skin design either change the <skin_settings> values 
-	    from above or optionally include one of the predefined designs from below.
-	-->
-	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
-	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
-	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
-	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
-	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
-	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
-
-<!-- Initialize the background sound -->
-<!-- Add this right after the <krpano> opening tag -->
-
-
-<!-- Add this right after the plugin definition -->
-<!-- <events name="krpanoReady"
-        onkrpanoready="playsound(bgsnd, '%SWFPATH%/music/background.mp3', 0, 0.5);"
-        keep="true"
-/> -->
 <action name="init_flags">
     set(music_is_playing, false);
 </action>
 
 
-    <action name="toggle_sidebar">
-	    if(layer[sidebar].visible,
-	        set(layer[sidebar].visible, false);
-	        tween(layer[menu_bar].x, 0, 0.8);    <!-- Move menu_bar back to left -->
-	        set(layer[menu_button].x, 10);
-	    ,
-	        set(layer[sidebar].visible, true);
-	        tween(layer[menu_bar].x, 250, 0.5);  <!-- Move menu_bar right with sidebar -->
-	        set(layer[menu_button].x, 10);
-	    );
-	</action>
 
-    <action name="toggle_sidebar">
-        if(layer[sidebar].visible,
-            tween(layer[sidebar].x, -250, 0.5);                  <!-- Hide sidebar off-screen to the left -->
-            tween(layer[menu_button].x, 10, 0.5);                <!-- Return menu button to original position -->
-            delayedcall(0.5, set(layer[sidebar].visible, false));<!-- Hide after animation completes -->
+<action name="toggle_sidebar">
+    if(layer[sidebar].visible,
+        tween(layer[sidebar].x, -250, 0.5);                  <!-- Hide sidebar off-screen to the left -->
+        tween(layer[menu_button].x, 10, 0.5);                <!-- Return menu button to original position -->
+        delayedcall(0.5, set(layer[sidebar].visible, false));<!-- Hide after animation completes -->
         ,
-            set(layer[sidebar].visible, true);                   <!-- First make sidebar visible -->
-            tween(layer[sidebar].x, 0, 0.5);                     <!-- Slide it in from left -->
-            tween(layer[menu_button].x, 250, 0.5);               <!-- Move menu button to align with sidebar -->
+        set(layer[sidebar].visible, true);                   <!-- First make sidebar visible -->
+        tween(layer[sidebar].x, 0, 0.5);                     <!-- Slide it in from left -->
+        tween(layer[menu_button].x, 250, 0.5);               <!-- Move menu button to align with sidebar -->
         );
     </action>
 
@@ -333,7 +275,7 @@
                bgcolor="0x478D8D"
                bgalpha="0.5"
                roundedge="15"
-               shadow="2"
+               bgshadow="2"
                shadowcolor="0x000000"
                shadowalpha="0.4"
                css="font-family:'Montserrat', sans-serif; font-size:18px; font-weight:bold; color:#FFFFFF; text-align:center; line-height:50px;"
@@ -478,7 +420,6 @@
             visible="true"
             keep="true"
             zorder="1001"
-            shadow="0 4 4 0x000000 0.5"
             bgroundedge="10" />
 
      <layer name="reception_button"
@@ -500,7 +441,7 @@
        visible="true"
        keep="true"
        zorder="1001"
-       shadow="0 4 4 0x000000 0.5"
+
        bgroundedge="10" />
             
 
@@ -524,7 +465,7 @@
        visible="true"
        keep="true"
        zorder="1001"
-       shadow="0 4 4 0x000000 0.5" />
+ />
 
 <!-- Rooms Dropdown -->
 <layer name="rooms_dropdown_button"
@@ -546,7 +487,7 @@
        visible="true"
        keep="true"
        zorder="1001"
-       shadow="0 4 4 0x000000 0.5" />
+ />
 
  <!-- Update F&B dropdown buttons -->
 <layer name="scene_2_Banquet_Entrance_button"
@@ -650,7 +591,6 @@
        keep="true"
        zorder="1001" />
 
-<!-- Add these separator lines after each button -->
 <layer name="separator_overview"
     parent="sidebar"
     type="container"
