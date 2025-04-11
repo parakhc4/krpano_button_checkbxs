@@ -339,8 +339,8 @@
        align="centertop"
        x="0"
        y="-10"
-       width="150"
-       height="80"
+       width="125"
+       height="95"
        keep="true"
        handcursor="false"
        zorder="999" />
