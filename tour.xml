@@ -1021,7 +1021,7 @@
 
 	</scene>
 
-	<scene name="scene_Executive_room_wc" title="executive room wc" onstart="set(layer[daynight_button].visible, false);set(layer[scene_title_display].html, 'Executiev Room WC'); set(layer[scene_title_display].visible, true)" thumburl="panos/executive_room_wc.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+	<scene name="scene_Executive_room_wc" title="executive room wc" onstart="set(layer[daynight_button].visible, false);set(layer[scene_title_display].html, 'Executiev Room'); set(layer[scene_title_display].visible, true)" thumburl="panos/executive_room_wc.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
