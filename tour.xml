@@ -750,43 +750,41 @@
 </layer>
 
 
-	<scene name="scene_1_day" title="1 day" onstart="set(layer[daynight_button].visible, true);set(layer[scene_title_display].html, 'Overview'); set(layer[scene_title_display].visible, true)" thumburl="panos/1_day.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
-		
-		<control bouncinglimits="calc:image.cube ? true : false" />
+    <scene name="scene_1_day" title="1 day" onstart="set(layer[daynight_button].visible, true);set(layer[scene_title_display].html, 'Overview'); set(layer[scene_title_display].visible, true)" thumburl="panos/1_day.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 
-		<view hlookat="1.378" vlookat="-22.328" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+        <control bouncinglimits="calc:image.cube ? true : false" />
 
-		<preview url="panos/1_day.tiles/preview.jpg" />
+        <view hlookat="1.378" vlookat="-22.328" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<image>
-			<cube url="panos/1_day.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
-		</image>
+        <preview url="panos/1_dnight.tiles/preview.jpg" />
 
-		<hotspot name="spot1" style="hs_circle" ath="3.687" atv="-0.916" linkedscene="scene_1_ENTRANCE" linkedscene_lookat="1.43,14.87,116.42" linkedscene_hoffset="0.0" use3dtransition="true" tag="Reception"/>
-		
-		<hotspot name="spot3" style="hs_circle" ath="45.058" atv="-54.000" linkedscene="scene_JUNIOR_SUITE1" linkedscene_lookat="25.33,11.4,120.0" linkedscene_hoffset="0.0" use3dtransition="true" tag="Junior Suite"/>
-		<hotspot name="spot2" style="hs_circle" ath="27.762" atv="-51.214" linkedscene="scene_Deluxe_Room_1" linkedscene_lookat="-63.91,22.78,110.28" tag="Deluxe Room"/>
-		
+        <image>
+            <cube url="panos/1_dnight.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+        </image>
 
-	</scene>
-
-	<scene name="scene_1_dnight" title="1 dnight" onstart="set(layer[daynight_button].visible, true);set(layer[scene_title_display].html, 'Overview'); set(layer[scene_title_display].visible, true)" thumburl="panos/1_dnight.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
-		
-		<control bouncinglimits="calc:image.cube ? true : false" />
-
-		<view hlookat="0.000" vlookat="-22.464" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/1_dnight.tiles/preview.jpg" />
-
-		<image>
-			<cube url="panos/1_dnight.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
-		</image>
-
-		<hotspot name="spot1" style="hs_circle" ath="2.315" atv="-1.411" linkedscene="scene_1_ENTRANCE" linkedscene_lookat="0.58,11.16,116.42" linkedscene_hoffset="-1.22" use3dtransition="true" tag = "Overview"/>
+        <hotspot name="spot1" style="hs_circle" ath="3.687" atv="-0.916" linkedscene="scene_1_ENTRANCE" linkedscene_lookat="1.43,14.87,116.42" linkedscene_hoffset="0.0" use3dtransition="true" tag="Reception"/>
         <hotspot name="spot3" style="hs_circle" ath="45.058" atv="-54.000" linkedscene="scene_JUNIOR_SUITE1" linkedscene_lookat="25.33,11.4,120.0" linkedscene_hoffset="0.0" use3dtransition="true" tag="Junior Suite"/>
-		<hotspot name="spot2" style="hs_circle" ath="27.762" atv="-51.214" linkedscene="scene_Deluxe_Room_1" linkedscene_lookat="-63.91,22.78,110.28" tag="Deluxe Room"/>
-		
-	</scene>
+        <hotspot name="spot2" style="hs_circle" ath="27.762" atv="-51.214" linkedscene="scene_Deluxe_Room_1" linkedscene_lookat="-63.91,22.78,110.28" tag="Deluxe Room"/>
+    </scene>
+
+
+    <scene name="scene_1_dnight" title="1 dnight" onstart="set(layer[daynight_button].visible, true);set(layer[scene_title_display].html, 'Overview'); set(layer[scene_title_display].visible, true)" thumburl="panos/1_dnight.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view hlookat="0.000" vlookat="-22.464" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/1_day.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/1_day.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3200" />
+        </image>
+
+        <hotspot name="spot1" style="hs_circle" ath="2.315" atv="-1.411" linkedscene="scene_1_ENTRANCE" linkedscene_lookat="0.58,11.16,116.42" linkedscene_hoffset="-1.22" use3dtransition="true" tag = "Overview"/>
+        <hotspot name="spot3" style="hs_circle" ath="45.058" atv="-54.000" linkedscene="scene_JUNIOR_SUITE1" linkedscene_lookat="25.33,11.4,120.0" linkedscene_hoffset="0.0" use3dtransition="true" tag="Junior Suite"/>
+        <hotspot name="spot2" style="hs_circle" ath="27.762" atv="-51.214" linkedscene="scene_Deluxe_Room_1" linkedscene_lookat="-63.91,22.78,110.28" tag="Deluxe Room"/>
+    </scene>
+
 
 	<scene name="scene_1_ENTRANCE" title="1 ENTRANCE" onstart="set(layer[daynight_button].visible, false);" thumburl="panos/1_ENTRANCE.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 		
