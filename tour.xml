@@ -12,10 +12,6 @@
 <style name="default_style"
        css="font-family: 'Montserrat', sans-serif;"/>
 
-<action name="detect_ios">
-    js("if (/iP(hone|od|ad)/.test(navigator.platform) || (navigator.userAgent.includes('Mac') &amp;&amp; 'ontouchend' in document)) krpano.set('is_ios', true); else krpano.set('is_ios', false);");
-</action>
-
 <action name="silence_errors">
     set(showerrors, false);
     set(debugmode, false);
@@ -26,7 +22,7 @@
     removelayer(log);
 </action>
 
-<events name="krpanoReady" onkrpanoready="silence_errors();detect_ios();" />
+<events name="krpanoReady" onkrpanoready="silence_errors();" />
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 <skin_settings maps="false"
@@ -91,40 +87,23 @@
 <action name="toggle_sidebar">
     if(is_animating, null,
         set(is_animating, true);
-        set(layer[menu_button].enabled, false);
-
         if(layer[sidebar].visible,
-            if(is_ios,
+            tween(layer[sidebar].x, -250, 0.5);
+            tween(layer[menu_button].x, 10, 0.5);
+            delayedcall(0.5, 
                 set(layer[sidebar].visible, false);
                 set(is_animating, false);
-                set(layer[menu_button].enabled, true);
-            ,
-                tween(layer[sidebar].x, -250, 0.5);
-                tween(layer[menu_button].x, 10, 0.5);
-                delayedcall(0.5, 
-                    set(layer[sidebar].visible, false);
-                    set(is_animating, false);
-                    set(layer[menu_button].enabled, true);
-                );
             );
         ,
-            if(is_ios,
-                set(layer[sidebar].visible, true);
+            set(layer[sidebar].visible, true);
+            tween(layer[sidebar].x, 0, 0.5);
+            tween(layer[menu_button].x, 250, 0.5);
+            delayedcall(0.5,
                 set(is_animating, false);
-                set(layer[menu_button].enabled, true);
-            ,
-                set(layer[sidebar].visible, true);
-                tween(layer[sidebar].x, 0, 0.5);
-                tween(layer[menu_button].x, 250, 0.5);
-                delayedcall(0.5,
-                    set(is_animating, false);
-                    set(layer[menu_button].enabled, true);
-                );
             );
         );
     );
 </action>
-
 
 <!-- <action name="toggle_sidebar">
     if(layer[sidebar].visible,
