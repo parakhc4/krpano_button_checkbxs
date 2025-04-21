@@ -88,20 +88,22 @@
     if(is_animating, null,
         set(is_animating, true);
         set(layer[menu_button].enabled, false);
-        
+
         if(layer[sidebar].visible,
-            tween(layer[sidebar].x, -250, 0.5);
-            tween(layer[menu_button].x, 10, 0.5);
-            delayedcall(0.5, 
+            tween(layer[sidebar].alpha, 0.0, 0.3);
+            delayedcall(0.3,
                 set(layer[sidebar].visible, false);
+                set(layer[sidebar].alpha, 1.0);
+                set(layer[menu_button].x, 10);
                 set(is_animating, false);
                 set(layer[menu_button].enabled, true);
             );
         ,
+            set(layer[sidebar].alpha, 0.0);
             set(layer[sidebar].visible, true);
-            tween(layer[sidebar].x, 0, 0.5);
-            tween(layer[menu_button].x, 250, 0.5);
-            delayedcall(0.5,
+            tween(layer[sidebar].alpha, 1.0, 0.3);
+            set(layer[menu_button].x, 250);
+            delayedcall(0.3,
                 set(is_animating, false);
                 set(layer[menu_button].enabled, true);
             );
