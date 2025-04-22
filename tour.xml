@@ -773,56 +773,7 @@
 
 </layer>
 
-<layer name="banquet_check_container"
-       type="container"
-       align="bottomcenter"
-       y="10%"
-       x = "3%"
-       width="120"
-       height="40"
-       visible="false"
-       keep="true"
-       zorder="2000">
 
-    <layer name="banquet_1_check" style="circle_checkbox_style" x="-40" />
-    <layer name="banquet_2_check" style="circle_checkbox_style" x="0" />
-    <layer name="banquet_3_check" style="circle_checkbox_style" x="40" />
-
-</layer>
-
-<!-- Add this after your existing layers but before scenes -->
-<!-- <style name="checkbox_style" -->
-       <!-- url="%SWFPATH%/skin/checkbox_empty.png" -->
-       <!-- url.checked="%SWFPATH%/skin/checkbox_checked.png" -->
-       <!-- align="bottomcenter" -->
-       <!-- y="20" -->
-       <!-- width="24" -->
-       <!-- height="24" -->
-       <!-- visible="false" -->
-       <!-- keep="true" -->
-       <!-- zorder="2001" /> -->
-
-<!-- Add checkbox container -->
-<!-- <layer name="checkbox_container"  -->
-       <!-- type="container" -->
-       <!-- align="bottomcenter" -->
-       <!-- width="300" -->
-       <!-- height="40" -->
-       <!-- y="20" -->
-       <!-- visible="false" -->
-       <!-- keep="true" -->
-       <!-- zorder="2000"> -->
-    
-    <!-- Checkboxes for F&B scenes -->
-    <!-- <layer name="banquet_entrance_check" style="checkbox_style" x="-100" /> -->
-    <!-- <layer name="banquet_1_check" style="checkbox_style" x="-50" /> -->
-    <!-- <layer name="banquet_2_check" style="checkbox_style" x="0" /> -->
-    <!-- <layer name="banquet_3_check" style="/checkbox_style" x="50" /> -->
-    <!-- <layer name="cafe_check" style="checkbox_style" x="100" /> -->
-    <!-- <layer name="reception_1_check" style="checkbox_style" x="-50"  visible="false" /> -->
-    <!-- <layer name="reception_2_check" style="checkbox_style" x="0"    visible="false" /> -->
-
-<!-- </layer> -->
 
 
     <scene name="scene_1_day" title="1 day" onstart="set(layer[daynight_button].visible, true);set(layer[scene_title_display].html, 'Overview'); set(layer[scene_title_display].visible, true)" thumburl="panos/1_day.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
@@ -1178,16 +1129,6 @@
 
 		<hotspot name="spot2" style="hs_circle" ath="40.246" atv="14.884" linkedscene="scene_JUNIOR_SUITE" linkedscene_lookat="207.8,19.68,120.0" linkedscene_hoffset="119.13" use3dtransition="true" tag="Junior Suite"/>
 		<hotspot name="spot4" style="hs_circle" ath="-138.796" atv="10.240" linkedscene="scene_1_day" linkedscene_lookat="25.33,11.4,120.0" linkedscene_hoffset="361.85" use3dtransition="true" tag="Overview"/>
-
-	</scene>
-    
-        <style name="circle_checkbox_style"
-        url="%SWFPATH%/skin/checkbox_empty.png"
-        url.checked="%SWFPATH%/skin/checkbox.png"
-        width="24"
-        height="24"
-        keep="true"
-        zorder="10000"
-    />
+    </scene>
 	
 </krpano>
