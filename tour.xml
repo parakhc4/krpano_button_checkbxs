@@ -738,7 +738,7 @@
            x="12%"
            y="0"
            handcursor="true"
-           onclick="openurl(' https://www.instagram.com/thevincentinn',_blank);"
+           onclick="openurl('https://www.instagram.com/thevincentinn',_blank);"
            onover="tween(scale, 1.2);"
            onout="tween(scale, 1.0);" />
 
@@ -751,13 +751,13 @@
            x="37%"
            y="0"
            handcursor="true"
-           onclick="openurl('wa.me/917697905251',_blank);"
+           onclick="openurl('https://wa.me/917697905251', '_blank');"
            onover="tween(scale, 1.2);"
            onout="tween(scale, 1.0);" />
 
     <layer name="gmaps_icon"
            parent="social_media_container"
-           url="%SWFPATH%/skin/maps.png"
+           url="%SWFPATH%/skin/google.png"
            width="40"
            height="40"
            align="left"
