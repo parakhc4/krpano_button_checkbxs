@@ -735,10 +735,10 @@
            width="40"
            height="40"
            align="left"
-           x="0"
+           x="12%"
            y="0"
            handcursor="true"
-           onclick="openurl('https://www.instagram.com/YOUR_USERNAME/',_blank);"
+           onclick="openurl(' https://www.instagram.com/thevincentinn',_blank);"
            onover="tween(scale, 1.2);"
            onout="tween(scale, 1.0);" />
 
@@ -748,10 +748,23 @@
            width="40"
            height="40"
            align="left"
-           x="50"
+           x="37%"
            y="0"
            handcursor="true"
-           onclick="openurl('https://wa.me/YOUR_NUMBER',_blank);"
+           onclick="openurl('wa.me/917697905251',_blank);"
+           onover="tween(scale, 1.2);"
+           onout="tween(scale, 1.0);" />
+
+    <layer name="gmaps_icon"
+           parent="social_media_container"
+           url="%SWFPATH%/skin/maps.png"
+           width="40"
+           height="40"
+           align="left"
+           x="62%"
+           y="0"
+           handcursor="true"
+           onclick="openurl('https://maps.app.goo.gl/2DaaQvcMZb9fLNzU9?g_st=ic',_blank);"
            onover="tween(scale, 1.2);"
            onout="tween(scale, 1.0);" />
 </layer>
