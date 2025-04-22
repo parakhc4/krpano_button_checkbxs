@@ -22,7 +22,7 @@
     removelayer(log);
 </action>
 
-<events name="krpanoReady" onkrpanoready="silence_errors();" />
+<events name="krpanoReady" onkrpanoready="silence_errors();preload_music();" />
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 <skin_settings maps="false"
@@ -82,6 +82,10 @@
 <action name="init_flags">
     set(music_is_playing, false);
     set(is_animating, false);
+</action>
+
+<action name="preload_music">
+    js('var audio = new Audio("%SWFPATH%/music/background.mp3"); audio.load();');
 </action>
 
 <action name="toggle_sidebar">
@@ -222,22 +226,20 @@
         js('soundinterface.playsound("bgsnd", "%SWFPATH%/music/background.mp3", 0, 0.5);');
     </action>
 
-<action name="mark_scene_visited">
-    <!-- Already existing lines for F&B ... -->
-    if(%1 == 'scene_2_Banquet_Entrance', set(layer[banquet_entrance_check].checked, true));
-    if(%1 == 'scene_Banquet_1',         set(layer[banquet_1_check].checked, true));
-    if(%1 == 'scene_Banquet_2',         set(layer[banquet_2_check].checked, true));
-    if(%1 == 'scene_Banquet_3',         set(layer[banquet_3_check].checked, true));
-    if(%1 == 'scene_1_1CAFE',           set(layer[cafe_check].checked, true));
+<!-- <action name="mark_scene_visited"> -->
+    <!-- if(%1 == 'scene_2_Banquet_Entrance', set(layer[banquet_entrance_check].checked, true)); -->
+    <!-- if(%1 == 'scene_Banquet_1',         set(layer[banquet_1_check].checked, true)); -->
+    <!-- if(%1 == 'scene_Banquet_2',         set(layer[banquet_2_check].checked, true)); -->
+    <!-- if(%1 == 'scene_Banquet_3',         set(layer[banquet_3_check].checked, true)); -->
+    <!-- if(%1 == 'scene_1_1CAFE',           set(layer[cafe_check].checked, true)); -->
 
 
-    if(%1 == 'scene_Banquet_1', set(layer[banquet_1_check].checked, true));
-    if(%1 == 'scene_Banquet_2', set(layer[banquet_2_check].checked, true));
-    if(%1 == 'scene_Banquet_3', set(layer[banquet_3_check].checked, true));
-    <!-- Add your Reception scenes -->
-    if(%1 == 'scene_1_Reception_1',     set(layer[reception_1_check].checked, true));
-    if(%1 == 'scene_1_Reception_2',     set(layer[reception_2_check].checked, true));
-</action>
+    <!-- if(%1 == 'scene_Banquet_1', set(layer[banquet_1_check].checked, true)); -->
+    <!-- if(%1 == 'scene_Banquet_2', set(layer[banquet_2_check].checked, true)); -->
+    <!-- if(%1 == 'scene_Banquet_3', set(layer[banquet_3_check].checked, true)); -->
+    <!-- if(%1 == 'scene_1_Reception_1',     set(layer[reception_1_check].checked, true)); -->
+    <!-- if(%1 == 'scene_1_Reception_2',     set(layer[reception_2_check].checked, true)); -->
+<!-- </action> -->
 
 
 <!-- Update the music button definition -->
@@ -778,7 +780,7 @@
        x = "3%"
        width="120"
        height="40"
-       visible="true"
+       visible="false"
        keep="true"
        zorder="2000">
 
@@ -877,7 +879,7 @@
 
 	</scene>
 
-	<scene name="scene_1_Reception_1" title="1 Reception 1" onstart="set(layer[daynight_button].visible, false);mark_scene_visited(xml.scene);set(layer[scene_title_display].html, 'Reception'); set(layer[scene_title_display].visible, true)" thumburl="panos/1_Reception_1.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+	<scene name="scene_1_Reception_1" title="1 Reception 1" onstart="set(layer[daynight_button].visible, false);set(layer[scene_title_display].html, 'Reception'); set(layer[scene_title_display].visible, true)" thumburl="panos/1_Reception_1.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -896,7 +898,7 @@
 
 	</scene>
 
-	<scene name="scene_1_Reception_2" title="1 Reception 2" onstart="set(layer[daynight_button].visible, false);mark_scene_visited(xml.scene);set(layer[scene_title_display].html, 'Reception'); set(layer[scene_title_display].visible, true)" thumburl="panos/1_Reception_2.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+	<scene name="scene_1_Reception_2" title="1 Reception 2" onstart="set(layer[daynight_button].visible, false);set(layer[scene_title_display].html, 'Reception'); set(layer[scene_title_display].visible, true)" thumburl="panos/1_Reception_2.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -936,7 +938,7 @@
 
 	</scene>
 
-	<scene name="scene_1_1CAFE" title="1.1CAFE" onstart="set(layer[daynight_button].visible, false); mark_scene_visited(xml.scene);set(layer[scene_title_display].html, 'Cafe'); set(layer[scene_title_display].visible, true)" thumburl="panos/1_1CAFE.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+	<scene name="scene_1_1CAFE" title="1.1CAFE" onstart="set(layer[daynight_button].visible, false); set(layer[scene_title_display].html, 'Cafe'); set(layer[scene_title_display].visible, true)" thumburl="panos/1_1CAFE.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -953,7 +955,7 @@
 
 	</scene>
 
-	<scene name="scene_2_Banquet_Entrance" title="2 Banquet Entrance" onstart="set(layer[daynight_button].visible, false); mark_scene_visited(xml.scene);set(layer[scene_title_display].html, 'Banquet Entrance'); set(layer[scene_title_display].visible, true)" thumburl="panos/2_Banquet_Entrance.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+	<scene name="scene_2_Banquet_Entrance" title="2 Banquet Entrance" onstart="set(layer[daynight_button].visible, false); set(layer[scene_title_display].html, 'Banquet Entrance'); set(layer[scene_title_display].visible, true)" thumburl="panos/2_Banquet_Entrance.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -972,7 +974,7 @@
 
 	</scene>
 
-	<scene name="scene_Banquet_1" title="Banquet 1" onstart="set(layer[daynight_button].visible, false); mark_scene_visited(xml.scene);set(layer[scene_title_display].html, 'Banquet'); set(layer[scene_title_display].visible, true);mark_scene_visited(xml.scene);" thumburl="panos/Banquet_1.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+	<scene name="scene_Banquet_1" title="Banquet 1" onstart="set(layer[daynight_button].visible, false);set(layer[scene_title_display].html, 'Banquet'); set(layer[scene_title_display].visible, true);" thumburl="panos/Banquet_1.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -989,7 +991,7 @@
 
 	</scene>
 
-	<scene name="scene_Banquet_2" title="Banquet 2" onstart="set(layer[daynight_button].visible, false); mark_scene_visited(xml.scene);set(layer[scene_title_display].html, 'Banquet'); set(layer[scene_title_display].visible, true);mark_scene_visited(xml.scene);" thumburl="panos/Banquet_2.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+	<scene name="scene_Banquet_2" title="Banquet 2" onstart="set(layer[daynight_button].visible, false); set(layer[scene_title_display].html, 'Banquet'); set(layer[scene_title_display].visible, true);" thumburl="panos/Banquet_2.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1006,7 +1008,7 @@
 
 	</scene>
 
-	<scene name="scene_Banquet_3" title="Banquet 3" onstart="set(layer[daynight_button].visible, false); mark_scene_visited(xml.scene);set(layer[scene_title_display].html, 'Banquet'); set(layer[scene_title_display].visible, true);mark_scene_visited(xml.scene);" thumburl="panos/Banquet_3.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+	<scene name="scene_Banquet_3" title="Banquet 3" onstart="set(layer[daynight_button].visible, false); set(layer[scene_title_display].html, 'Banquet'); set(layer[scene_title_display].visible, true);" thumburl="panos/Banquet_3.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1023,7 +1025,7 @@
 
 	</scene>
 
-	<scene name="scene_Breakfast_Buffet" title="Breakfast Buffet" onstart="set(layer[daynight_button].visible, false);set(layer[scene_title_display].html, 'Breakfast Buffet'); set(layer[scene_title_display].visible, true);mark_scene_visited(xml.scene);" thumburl="panos/Breakfast_Buffet.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+	<scene name="scene_Breakfast_Buffet" title="Breakfast Buffet" onstart="set(layer[daynight_button].visible, false);set(layer[scene_title_display].html, 'Breakfast Buffet'); set(layer[scene_title_display].visible, true);" thumburl="panos/Breakfast_Buffet.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1094,7 +1096,7 @@
 
 	</scene>
 
-	<scene name="scene_Executive_room_wc" title="executive room wc" onstart="set(layer[daynight_button].visible, false);set(layer[scene_title_display].html, 'Executiev Room'); set(layer[scene_title_display].visible, true)" thumburl="panos/executive_room_wc.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
+	<scene name="scene_Executive_room_wc" title="executive room wc" onstart="set(layer[daynight_button].visible, false);set(layer[scene_title_display].html, 'Executive Room'); set(layer[scene_title_display].visible, true)" thumburl="panos/executive_room_wc.tiles/thumb.jpg" lat="" lng="" alt="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
